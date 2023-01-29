@@ -4,8 +4,9 @@ const MongoClient = mongodb.MongoClient;
 let _db;
 
 const mongoConnect = callback => {
+  
   MongoClient.connect(`mongodb+srv://jaffaf:${process.env.MONGO_PASS}@cluster0.i6faktw.mongodb.net/?retryWrites=true&w=majority`)
-    .then(client => {
+  .then(client => {
       console.log('Connected!');
       _db = client.db();
       callback();
